@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HouseController@index')->name('houses.index');
 Route::get('/houses/{house}', 'HouseController@show')->name('houses.show');
+
+Route::get('/trains', 'TrainController@index')->name('trains.index');
