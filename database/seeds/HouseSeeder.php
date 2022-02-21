@@ -95,13 +95,13 @@ class HouseSeeder extends Seeder
         // https://fakerphp.github.io
         //creiamo con un ciclo 100 righe nel nostro db con dati Fake
         for ($i = 0; $i < 100; $i++) {
-            $newHouse = new House();
+            $newHouse = new House(); //houses
             $newHouse->name = $faker->words(4, true);
             $newHouse->description = $faker->text();
             $newHouse->address = $faker->streetAddress();
             $newHouse->city = $faker->city();
             $newHouse->rooms = $faker->randomDigit();
-            $newHouse->mq = $faker->numberBetween(90, 200);;
+            $newHouse->mq = $faker->numberBetween(90, 200);
             $newHouse->level = $faker->randomDigit();
             $newHouse->photo = $faker->imageUrl(640, 480, 'houses', true);
             $newHouse->price = $faker->numberBetween(100000, 900000);

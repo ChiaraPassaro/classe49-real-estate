@@ -14,9 +14,23 @@ class HouseController extends Controller
      */
     public function index()
     {
-        $houses = House::all();
-        dd($houses);
+        $houses = House::paginate(15);
+        return view('houses.home', ['houses' => $houses]);
     }
+
+
+    // /**
+    //  * Display the specified resource.
+    //  *
+    //  * @param  \App\House  $house
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function show($id)
+    // {
+    //     $house = new House();
+
+    //     dd($house->findOrFail($id));
+    // }
 
 
     /**
@@ -25,8 +39,10 @@ class HouseController extends Controller
      * @param  \App\House  $house
      * @return \Illuminate\Http\Response
      */
-    public function show(House $house)
+    public function show(House $house) //findOrFail
     {
-        //
+        //restituiamo una view alla quale passiamo la nostra riga specifica del db
+        // return view('houses.show', ['house' => $house]);
+        return view('houses.show', compact('house'));
     }
 }

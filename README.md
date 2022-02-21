@@ -19,8 +19,24 @@
    - updated_at
 2. Model <br>
 House
-3. Controller <br>
+create model
+![options](./make-model.png)
+
+--all creates migration, model, seeder, factory, controller resources
+`php artisan make:model --all`
+
+
+
+1. Controller <br>
    HouseController
 
-4. Migration <br>
+2. Migration <br>
+
+3. Seed
+   Avviamo i nostri seeder in massa con
+   `php artisan db:seed`  
+   `$this->call(HouseSeeder::class);` dentro DatabaseSeeder possiamo aggiungere i nostri seeder
+
+   oppure chiamiamo direttamente il seeder specifico
+   `php artisan db:seed --class=NomeSeeder`
    
